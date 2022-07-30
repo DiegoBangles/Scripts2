@@ -49,6 +49,12 @@ local function place3()
     [2] = CFrame.new(-2556.00977, 26.5068722, -34.512886 + math.random(0,10)) * CFrame.Angles(0, -0, -0)
 }
 
+game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+end
+end
+end
+end
+
 local function place4() -- place function if there is another erwin on the map
 if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
 for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
