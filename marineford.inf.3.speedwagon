@@ -322,9 +322,13 @@ upgrade()
 place5()
 place6()
 upgrade2()
+place9()
+place10()
+upgrade4()
 start()
 sell()
 sell2()
+sell3()
 teleport()
 end
 end
