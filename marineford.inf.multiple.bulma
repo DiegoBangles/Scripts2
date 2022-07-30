@@ -116,7 +116,7 @@ for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
     if v.Name == getgenv().unit3 then
         local args = {
     [1] = v._stats.uuid.Value,
-    [2] = CFrame.new(-2574.00903, 26.5078239, -4.2500153) * CFrame.Angles(0, -0, -0)
+    [2] = CFrame.new(-2562.67896 + math.random(-5,5), 26.5078259, -71.8945618 + math.random(-5,5)) * CFrame.Angles(0, -0, -0)
 }
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
@@ -129,7 +129,7 @@ local function place8()
   if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
         local args = {
     [1] = getgenv().id3,
-    [2] = CFrame.new(-2574.00903, 26.5078239, -4.2500153) * CFrame.Angles(0, -0, -0)
+    [2] = CFrame.new(-2562.67896 + math.random(-5,5), 26.5078259, -71.8945618 + math.random(-5,5)) * CFrame.Angles(0, -0, -0)
 }
 
 game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
@@ -140,7 +140,7 @@ end
 
 local function upgrade3() -- Upgrades to upgrade 5 and auto upgrades lowest upgraded unit
 for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
-    if v.Name == getgenv().unit2 then
+    if v.Name == getgenv().unit3 then
         if v._stats.upgrade.Value < 20 then 
 local args = {
 [1] = v
