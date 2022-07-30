@@ -113,7 +113,7 @@ end
 local function place7() -- place function if there is another erwin on the map
 if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
 for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
-    if v.Name == getgenv().unit2 then
+    if v.Name == getgenv().unit3 then
         local args = {
     [1] = v._stats.uuid.Value,
     [2] = CFrame.new(-2554.00903 + math.random(-5,5), 26.5078239, -34.2500153) * CFrame.Angles(0, -0, -0)
@@ -128,7 +128,7 @@ end
 local function place8() 
   if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
         local args = {
-    [1] = getgenv().id2,
+    [1] = getgenv().id3,
     [2] = CFrame.new(-2554.00903 + math.random(-5,5), 26.5078239, -34.2500153) * CFrame.Angles(0, -0, -0)
 }
 
@@ -140,7 +140,7 @@ end
 
 local function upgrade3() -- Upgrades to upgrade 5 and auto upgrades lowest upgraded unit
 for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
-    if v.Name == getgenv().unit2 then
+    if v.Name == getgenv().unit3 then
         if v._stats.upgrade.Value < 20 then 
 local args = {
 [1] = v
@@ -235,7 +235,7 @@ end
 local function sell3()
 if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose -1 then
   for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
-  if v.Name == getgenv().unit2 then
+  if v.Name == getgenv().unit3 then
 local args = {
     [1] = v
 }
