@@ -80,7 +80,8 @@ local function place5()
 game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
 end
 end
-
+end
+end
 
 
 local function upgrade() -- Upgrades to upgrade 5 and auto upgrades lowest upgraded unit
