@@ -97,10 +97,13 @@ end
 
 
 local function upgrade2() -- Upgrades to upgrade 5 and auto upgrades lowest upgraded unit
+local e = 3
+if e == 0 then return end
 for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
     if v.Name == getgenv().unit then
-        if v._stats.upgrade.Value > 6 then 
-        return end
+        if v._stats.upgrade.Value < 7 then
+        e -= 1
+        end
         end
         end
  
