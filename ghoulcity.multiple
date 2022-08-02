@@ -313,10 +313,10 @@ _G.a = true
 while _G.a do
     task.wait()
 task.wait()
-place7()
-place8()
 place()
 place3()
+place7()
+place8()
 upgrade3()
 upgrade()
 place5()
