@@ -151,6 +151,47 @@ end
 end
 end
 
+local function place9() -- place function if there is another erwin on the map
+if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
+for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+    if v.Name == getgenv().unit4 then
+        local args = {
+    [1] = v._stats.uuid.Value,
+    [2] = CFrame.new(-2996.3728 + math.random(-5,5), 61.9592628, -45.630909 + math.random(-5,5)) * CFrame.Angles(0, -0, -0)
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+end
+end
+end
+end
+
+local function place10() 
+  if game:GetService("Workspace")["_wave_num"].Value < getgenv().wavetolose then
+        local args = {
+    [1] = getgenv().id4,
+    [2] = CFrame.new(-2996.3728 + math.random(-5,5), 61.9592628, -45.630909 + math.random(-5,5)) * CFrame.Angles(0, -0, -0)
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.spawn_unit:InvokeServer(unpack(args))
+end
+end
+
+
+
+local function upgrade4() -- Upgrades to upgrade 5 and auto upgrades lowest upgraded unit 
+for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+    if v.Name == getgenv().unit4 then
+        if v._stats.upgrade.Value < 20 then 
+local args = {
+[1] = v
+  }
+game:GetService("ReplicatedStorage").endpoints.client_to_server.upgrade_unit_ingame:InvokeServer(unpack(args))
+end
+end
+end
+end
+
 local function join() -- join teleporter
 local args = {
     [1] = "_lobbytemplategreen6"
@@ -232,6 +273,19 @@ end
 end
 end
 end
+local function sell3()
+if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose -1 then
+  for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+  if v.Name == getgenv().unit4 then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(unpack(args))
+end
+end
+end
+end
 local function teleport() 
 if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
 task.wait(5)
@@ -261,16 +315,20 @@ while _G.a do
 task.wait()
 place7()
 place8()
-upgrade3()
 place()
 place3()
+upgrade3()
 upgrade()
 place5()
 place6()
 upgrade2()
+place9()
+place10()
+upgrade4()
 start()
 sell()
 sell2()
+sell3()
 teleport()
 end
 end
