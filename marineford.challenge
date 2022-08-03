@@ -213,7 +213,9 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_lev
 end
 
 local function challenge() --checks if current challenge is star fruits and does it
+print(0)
 for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants) do
+print(1)
 if v.Name == "ChallengeCleared" and v.Visible == true then 
       print(2)
       else
