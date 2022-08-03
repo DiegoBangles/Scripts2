@@ -213,9 +213,13 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_lev
 end
 
 local function challenge() --checks if current challenge is star fruits and does it
+print(1)
       if game.Players.LocalPlayer.PlayerGui:FindFirstDescendant("ChallengeCleared").Visible == true then
+      print(2)
       else
+      print(3)
         if workspace["_LOBBIES"]["_DATA"]["_CHALLENGE"]["current_reward"].Value == "star_fruit_random" then
+        print(4)
              local args = {[1] = "_lobbytemplategreen331"}
              game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
              wait(20)
@@ -308,6 +312,7 @@ end
 if game.PlaceId == 8304191830 then
 while true do
 challenge()
+task.wait(1)
 join()
 task.wait(1)
 Create()
