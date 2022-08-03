@@ -214,7 +214,7 @@ end
 
 local function challenge() --checks if current challenge is star fruits and does it
     for i,v in pairs game.Players.LocalPlayer.PlayerGui:GetChildren() do
-      if v:IsA("SurfaceGui") and v:FindFirstChild("ChallengeCleared") then
+      if v:IsA("SurfaceGui") and v:FindFirstChild("ChallengeCleared").Visible == true then
       else
         if workspace["_LOBBIES"]["_DATA"]["_CHALLENGE"]["current_reward"].Value == "star_fruit_random" then
              local args = {[1] = "_lobbytemplategreen331"}
