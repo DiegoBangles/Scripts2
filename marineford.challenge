@@ -311,6 +311,7 @@ end
 
 if game.PlaceId == 8304191830 then
 while true do
+print(0)
 challenge()
 task.wait(1)
 join()
