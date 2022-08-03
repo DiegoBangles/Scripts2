@@ -213,8 +213,8 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_lev
 end
 
 local function challenge() --checks if current challenge is star fruits and does it
-print(1)
-      if game.Players.LocalPlayer.PlayerGui:FindFirstDescendant("ChallengeCleared").Visible == true then
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants) do
+if v.Name == "ChallengeCleared" and v.Visible == true then 
       print(2)
       else
       print(3)
@@ -225,6 +225,7 @@ print(1)
              wait(20)
         end
       end
+     end
 end
 
 local function start2() -- Starts the teleport
@@ -311,7 +312,6 @@ end
 
 if game.PlaceId == 8304191830 then
 while true do
-print(0)
 challenge()
 task.wait(1)
 join()
