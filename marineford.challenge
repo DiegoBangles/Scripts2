@@ -213,8 +213,7 @@ game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_lev
 end
 
 local function challenge() --checks if current challenge is star fruits and does it
-    for i,v in pairs game.Players.LocalPlayer.PlayerGui:GetChildren() do
-      if v:IsA("SurfaceGui") and v:FindFirstChild("ChallengeCleared").Visible == true then
+      if game.Players.LocalPlayer.PlayerGui:FindFirstDescendant("ChallengeCleared").Visible == true then
       else
         if workspace["_LOBBIES"]["_DATA"]["_CHALLENGE"]["current_reward"].Value == "star_fruit_random" then
              local args = {[1] = "_lobbytemplategreen331"}
@@ -222,7 +221,6 @@ local function challenge() --checks if current challenge is star fruits and does
              wait(20)
         end
       end
-    end
 end
 
 local function start2() -- Starts the teleport
