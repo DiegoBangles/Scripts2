@@ -186,7 +186,112 @@ local data = {
    ["embeds"] = {
        {
            ["title"] = "**Anime Adventures Inf**",
-           ["description"] = "Lost on wave: " .. game:GetService("Workspace")["_wave_num"].Value .. ".  Amount of Gems Earned: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.GoldGemXP.GemReward.Main.Amount.Text.. ". Time Taken: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text.. " ",
+           ["description"] = "Lost on wave: " .. game:GetService("Workspace")["_wave_num"].Value .. ".  Amount of Gems Earned: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.GoldGemXP.GemReward.Main.Amount.Text.. ". Time Taken: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text.." ".." Current gems are: "..game.Players.LocalPlayer["_stats"]["gem_amount"].Value.." ",
+                               
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = getgenv().webhook, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+
+
+end
+
+local function sell()
+if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose -1 then
+  for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+  if v.Name == getgenv().unit then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(unpack(args))
+end
+end
+end
+end
+local function sell2()
+if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose -1 then
+  for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+  if v.Name == getgenv().unit2 then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(unpack(args))
+end
+end
+end
+end
+local function sell3()
+if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose -1 then
+  for i, v in next, game:GetService("Workspace")["_UNITS"]:GetChildren() do
+  if v.Name == getgenv().unit4 then
+local args = {
+    [1] = v
+}
+
+game:GetService("ReplicatedStorage").endpoints.client_to_server.sell_unit_ingame:InvokeServer(unpack(args))
+end
+end
+end
+end
+local function teleport() 
+if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
+task.wait(5)
+webhook()
+game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
+end
+end
+
+if game.PlaceId == 8304191830 then
+while true do
+join()
+task.wait(1)
+Create()
+task.wait(1)
+start2()
+task.wait()
+WatermarkForIdiotYter()
+task.wait(5)
+end
+elseif game.PlaceId == 8349889591 then
+repeat wait() until game:IsLoaded()
+task.wait(20) -- Waits for the game remotes to load (This is needed)
+game.Players.LocalPlayer.PlayerGui.MessageGui.Enabled = false -- Removes the annoying error messages
+_G.a = true 
+while _G.a do
+    task.wait()
+task.wait()
+place7()
+place8()
+place()
+place3()
+upgrade3()
+upgrade()
+place5()
+place6()
+upgrade2()
+place9()
+place10()
+upgrade4()
+start()
+sell()
+sell2()
+sell3()
+teleport()
+end
+end
+
                                
            ["type"] = "rich",
            ["color"] = tonumber(0x7269da),
