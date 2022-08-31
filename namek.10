@@ -122,7 +122,7 @@ end
 local function Create() -- Creates the map
 local args = {
     [1] = "_lobbytemplategreen6",
-    [2] = "nmaek_infinite",
+    [2] = "namek_infinite",
     [3] = true,
     [4] = "Hard"
 }
