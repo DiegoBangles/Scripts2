@@ -168,6 +168,7 @@ end
 
 local function sell()
 if game:GetService("Workspace")["_wave_num"].Value > getgenv().wavetolose - 1 then
+webhook()
         game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
 end
 end
