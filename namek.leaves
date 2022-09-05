@@ -176,7 +176,7 @@ end
 local function teleport() 
 if game:GetService("Workspace")["_DATA"].GameFinished.Value == true then
 task.wait(5)
-webhook()
+
 game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
 end
 end
